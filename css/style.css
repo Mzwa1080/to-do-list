@@ -1,0 +1,17 @@
+
+
+#taskInput{
+    border-radius: 1rem;
+    width: 15rem;
+    border: 1px solid black dotted;
+}
+
+.main-section{
+    width: 90%;
+    text-align: center;
+    background-color: aquamarine;
+    height: 800px;
+}
+ul li{
+    text-decoration: none;
+}
