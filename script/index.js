@@ -34,33 +34,27 @@ function getTasks() {
   taskList.innerHTML = '';
 
   tasks.forEach(addedTask => {
-    const listItem = document.createElement('li');
-    listItem.innerText = addedTask.name + ' - Created on: ' + addedTask.createdDate;
+
+    let listItem = document.createElement('li');
+    listItem.innerText = addedTask.name + '  Date created: ' + addedTask.createdDate;
+
+
     if (addedTask.completed) {
       listItem.classList.add('completed');
     }
-
-    const checkbox = document.createElement('input');
+    let checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.checked = addedTask.completed;
-    checkbox.addEventListener('change', () => toggleTaskCompletion(addedTask.id));
 
+
+    checkbox.addEventListener('change', () => toggleTaskCompletion(addedTask.id));
     listItem.prepend(checkbox);
     taskList.appendChild(listItem);
   });
 }
 
-function toggleTaskCompletion(taskId) {
-  const addedTask = tasks.find(addedTask => addedTask.id === taskId);
-  if (addedTask) {
-    addedTask.completed = !addedTask.completed;
-    getTasks();
-  }
-}
+// I NEED TO DO THE LOCALSTORAGE 
 
-// function sortTasks() {
-//   tasks.sort((a, b) => a.name.localeCompare(b.name));
-//   getTasks();
-// }
 
-// getTasks();
+
+
